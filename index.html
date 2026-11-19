@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emefa S. D. Buaka</title>
+<meta name="description" content="Emefa Surprize Deborah Buaka, PhD candidate in Applied Economics at UNC Greensboro. Health economics, Medicaid and disability policy, causal inference.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: calm, credible, a policy economist's front page; warm, not corporate.
+   IDEA: a policy brief whose cover figure is an event-study chart.
+   PICTURE: a live difference-in-differences plot: treated vs comparison, policy line, the gap shaded as the effect.
+   COLOUR and TYPE: deep teal field, pale mist support, coral accent; Source Serif 4 titles, Public Sans text.
+   LAYOUT: full-bleed teal hero (name + chart), then white bands: research, publications, experience, teaching, skills, honours, contact. */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0c1a20);--ink:light-dark(#14232a,#e6eef0);--soft:light-dark(#4a5d65,#a7b8bd);
+--teal:#114b5f;--teal2:light-dark(#114b5f,#7cc4d6);--mist:light-dark(#eaf2f4,#13262e);--line:light-dark(#d6e2e6,#23404a);
+--coral:#e4572e;--coral2:light-dark(#c9431d,#ff8a66)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 "Public Sans",system-ui,sans-serif;overflow-x:clip}
+a{color:var(--teal2);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:22px}
+h3{font-size:19px;line-height:1.3}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(40px,6vw,80px) max(5vw,18px)}
+.band.alt{background:var(--mist)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:var(--teal);color:#fff;border-bottom:1px solid #ffffff22}
+nav .wrap{display:flex;align-items:center;gap:20px;padding:0 max(5vw,18px);min-height:58px;flex-wrap:wrap}
+nav .me{font-family:"Source Serif 4",serif;font-weight:600;font-size:18px;color:#fff;text-decoration:none;margin-right:auto}
+nav .links{display:flex;gap:4px;flex-wrap:wrap}
+nav .links a{color:#d9ecf1;text-decoration:none;font-size:15px;padding:10px 10px;border-radius:6px}
+nav .links a:hover{background:#ffffff1a;color:#fff}
+@media(max-width:760px){nav .links{display:none}}
+@media(max-width:900px){nav{position:static}}
+
+/* hero */
+.hero{background:var(--teal);color:#fff;padding:clamp(36px,5vw,72px) max(5vw,18px) clamp(40px,6vw,84px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(38px,5.2vw,58px);line-height:1.04}
+.hero .role{font-size:19px;color:#d9ecf1;margin:18px 0 6px}
+.hero .lede{color:#eaf6f9;max-width:36em;margin:14px 0 26px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
+.tags li{border:1px solid #ffffff55;border-radius:999px;padding:5px 13px;font-size:14px;color:#fff}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;color:#fff;border:1px solid #ffffff66}
+.btn.main{background:var(--coral);border-color:var(--coral)}
+.btn:hover{filter:brightness(1.08)}
+.chart{background:#0d3c4c;border:1px solid #ffffff22;border-radius:14px;padding:18px 18px 12px;box-shadow:0 24px 50px -24px #00000080}
+.fig{position:relative;min-height:300px}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.chart p{margin:8px 2px 0;font-size:13.5px;color:#b9d7df}
+@media(max-width:860px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.fig{min-height:250px}}
+
+/* research */
+.lead{font-size:18px;max-width:46em;color:var(--ink);margin:0 0 30px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:22px}
+.band.alt .card{background:var(--bg)}
+.card .k{font-size:13.5px;color:var(--coral2);font-weight:600;margin-bottom:6px}
+.card p{margin:10px 0 0;color:var(--soft);font-size:15.5px}
+
+/* publications */
+.pubs{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.pubs li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;padding:18px 0;border-top:1px solid var(--line)}
+.pubs li:last-child{border-bottom:1px solid var(--line)}
+.yr{font-family:"Source Serif 4",serif;font-size:22px;color:var(--teal2);font-weight:600}
+.pubs .t{font-weight:600;font-size:17px}
+.pubs .a,.pubs .v{color:var(--soft);font-size:15.5px}
+.pubs .v em{font-style:italic}
+.doi{font-size:14.5px;overflow-wrap:anywhere}
+.sub{font-size:15px;font-weight:600;color:var(--soft);margin:30px 0 4px}
+.sub:first-of-type{margin-top:0}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:190px minmax(0,1fr);gap:24px;padding:20px 0;border-top:1px solid var(--line)}
+.tl .when{color:var(--soft);font-size:14.5px;white-space:nowrap;padding-top:2px}
+.tl .org{color:var(--teal2);font-weight:500;font-size:15.5px;margin-top:2px}
+.tl ul{margin:10px 0 0;padding-left:18px;color:var(--soft);font-size:15.5px}
+.tl ul li{display:list-item;border:0;padding:3px 0}
+@media(max-width:640px){.tl li{grid-template-columns:minmax(0,1fr);gap:4px}.tl .when{white-space:normal}}
+
+/* two-col lists */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,4vw,56px)}
+.plain{list-style:none;margin:0;padding:0}
+.plain li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line);font-size:15.5px}
+.plain li span:last-child{color:var(--soft);white-space:nowrap;text-align:right}
+@media(max-width:480px){.plain li{flex-direction:column;gap:2px}.plain li span:last-child{white-space:normal;text-align:left}}
+.skill{margin:0 0 16px}
+.skill b{display:block;font-size:14.5px;color:var(--soft);font-weight:600;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--mist);border:1px solid var(--line);border-radius:6px;padding:4px 11px;font-size:14.5px}
+.band.alt .chips span{background:var(--bg)}
+.edu .deg{font-weight:600}
+.edu .sch{color:var(--soft);font-size:15px}
+
+/* contact */
+.contact{background:var(--teal);color:#fff}
+.contact h2{color:#fff}
+.contact p{color:#d9ecf1;max-width:40em}
+.contact a{color:#fff}
+.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;margin-top:26px}
+.way{display:block;border:1px solid #ffffff40;border-radius:10px;padding:16px 18px;text-decoration:none;min-height:44px}
+.way:hover{background:#ffffff12}
+.way small{display:block;color:#b9d7df;font-size:13.5px}
+.way span{font-weight:600;overflow-wrap:anywhere}
+footer{background:#0b3442;color:#9fc3cc;font-size:13.5px;padding:18px max(5vw,18px)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="me" href="#top">Emefa S. D. Buaka</a>
+    <div class="links">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Emefa Surprize Deborah Buaka</h1>
+      <p class="role">PhD Candidate in Applied Economics · University of North Carolina at Greensboro</p>
+      <p class="lede">I study how public programs change people's lives, and what they cost. My work evaluates Medicaid-funded services for people with intellectual and developmental disabilities, using causal inference and economic impact modeling to give policymakers evidence they can act on.</p>
+      <ul class="tags" aria-label="Research interests">
+        <li>Health economics</li><li>Applied microeconomics</li><li>Medicaid &amp; disability policy</li><li>Impact analysis</li>
+      </ul>
+      <div class="btns">
+        <a class="btn main" href="cv.pdf">Download CV</a>
+        <a class="btn" href="https://github.com/EmefaSurprize">GitHub</a>
+        <a class="btn" href="https://orcid.org/0000-0001-6078-8520">ORCID</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <figure class="chart" style="margin:0">
+      <div class="fig"><svg id="did" role="img" aria-label="Illustrative difference-in-differences chart: a treated group and a comparison group track together until a policy is adopted, after which the treated group rises and the gap between them is shaded as the estimated effect."></svg></div>
+      <p>Difference-in-differences: comparing outcomes before and after a policy, against a group that didn't get it. (Illustrative.)</p>
+    </figure>
+  </div>
+</header>
+
+<section class="band" id="research">
+  <div class="wrap">
+    <h2>Research</h2>
+    <p class="lead">My dissertation builds a replicable, national-data framework for evaluating Medicaid Home and Community-Based Services (HCBS) waivers that serve people with intellectual and developmental disabilities (IDD), with a focus on the Direct Support Professional workforce. North Carolina's Innovations Waiver is the proof-of-concept case.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="k">Dissertation</div>
+        <h3>Medicaid HCBS waivers and the IDD workforce</h3>
+        <p>Economic impact modeling with IMPLAN (statewide, urban and rural) and difference-in-differences designs to estimate effects on service use, spending and access.</p>
+      </article>
+      <article class="card">
+        <div class="k">Program evaluation</div>
+        <h3>Cost savings of High-Fidelity Wraparound</h3>
+        <p>A Medicaid claims-based evaluation of wraparound services for youth in North Carolina, and what tiered care coordination means for equitable access.</p>
+      </article>
+      <article class="card">
+        <div class="k">Fair lending</div>
+        <h3>Disparities in mortgage approvals</h3>
+        <p>Regression models on HMDA data estimating how loan approval probabilities differ by applicant race and gender. <a href="https://github.com/EmefaSurprize/hmda-lending-disparities">Code on GitHub</a>.</p>
+      </article>
+      <article class="card">
+        <div class="k">Digital health</div>
+        <h3>Wearables for adults with IDD</h3>
+        <p>Co-led a feasibility study of wearable health monitoring for Medicaid service recipients, covering consent, IRB risk assessment and quality-improvement design.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+    <p class="sub">Peer-reviewed articles</p>
+    <ol class="pubs">
+      <li><div class="yr">2024</div><div>
+        <div class="t">AI and medical imaging technology: evolution, impacts, and economic insights</div>
+        <div class="a"><b>Buaka, E. S. D.</b> &amp; Moid, M. Z. I.</div>
+        <div class="v"><em>The Journal of Technology Transfer</em></div>
+        <a class="doi" href="https://doi.org/10.1007/s10961-024-10100-x">doi.org/10.1007/s10961-024-10100-x</a>
+      </div></li>
+      <li><div class="yr">2023</div><div>
+        <div class="t">Enhancing the knowledge economy: a cross-country study of knowledge creation</div>
+        <div class="a">Moid, M. Z. I., <b>Buaka, E. S. D.</b> &amp; Link, A. N.</div>
+        <div class="v"><em>Journal of the Knowledge Economy</em></div>
+        <a class="doi" href="https://doi.org/10.1007/s13132-023-01546-9">doi.org/10.1007/s13132-023-01546-9</a>
+      </div></li>
+      <li><div class="yr">2023</div><div>
+        <div class="t">Tax compliance in Ghana: does corruption and trust in the government matter?</div>
+        <div class="a">Nyarkpoh, M. K., Turkson, D. &amp; <b>Buaka, E. S.</b></div>
+        <div class="v"><em>SN Social Sciences</em> 3, 155</div>
+        <a class="doi" href="https://doi.org/10.1007/s43545-023-00746-z">doi.org/10.1007/s43545-023-00746-z</a>
+      </div></li>
+    </ol>
+    <p class="sub">Working papers</p>
+    <ol class="pubs">
+      <li><div class="yr">2023</div><div>
+        <div class="t">Estimating the impact of temporary COVID-19 college closures on the 2020 Census count</div>
+        <div class="a">Andersen, M. S., <b>Buaka, E.</b>, Hillygus, D. S., Marsicano, C. S. &amp; Martin, R. C.</div>
+        <div class="v">Working Paper 23-765, Annenberg Institute at Brown University</div>
+      </div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <ol class="tl">
+      <li><div class="when">Aug 2023 – May 2025;<br>Aug 2026 – present</div><div>
+        <h3>Graduate Research Assistant, Disability &amp; Medicaid Policy</h3>
+        <div class="org">University of North Carolina at Greensboro</div>
+        <ul><li>Lead causal evaluations of Medicaid-funded programs for people with IDD, including HCBS workforce and service-delivery initiatives.</li>
+        <li>Design quasi-experimental identification strategies to estimate impacts on utilization, spending and access.</li>
+        <li>Write policy-facing summaries and technical documentation on disability service financing and workforce investment.</li></ul>
+      </div></li>
+      <li><div class="when">May 2026 – Jul 2026</div><div>
+        <h3>Digital Health Program Technology Ambassador</h3>
+        <div class="org">Peacehaven Farms</div>
+        <ul><li>Co-led a feasibility study on wearable health monitoring for adults with IDD receiving Medicaid services.</li></ul>
+      </div></li>
+      <li><div class="when">Aug 2025 – May 2026</div><div>
+        <h3>Strategic Planning Analyst Intern</h3>
+        <div class="org">Guilford County Schools</div>
+        <ul><li>Analyzed student achievement, attendance and resource allocation to support district strategic planning.</li>
+        <li>Evaluated academic programs with ROI and impact analyses against the district's strategic goals.</li></ul>
+      </div></li>
+      <li><div class="when">Jan 2025 – Aug 2025</div><div>
+        <h3>Graduate Research Assistant, Department of Economics</h3>
+        <div class="org">University of North Carolina at Greensboro</div>
+        <ul><li>Designed and ran a cost-savings evaluation of High-Fidelity Wraparound services using Medicaid claims.</li>
+        <li>Managed data preparation, analytic workflows and model implementation.</li></ul>
+      </div></li>
+      <li><div class="when">May 2023 – Aug 2023</div><div>
+        <h3>Economics Research Intern</h3>
+        <div class="org">RPIC, National Institute of Minority Economic Development</div>
+        <ul><li>Modeled mortgage approval probabilities from HMDA data, focusing on disparities by applicant race and gender.</li></ul>
+      </div></li>
+      <li><div class="when">Aug 2021 – May 2022</div><div>
+        <h3>Graduate Research Assistant, Department of Economics</h3>
+        <div class="org">University of North Carolina at Greensboro</div>
+        <ul><li>Used SafeGraph and Census population data to study how school closures affected the 2020 Census count.</li></ul>
+      </div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band alt" id="teaching">
+  <div class="wrap two">
+    <div>
+      <h2>Teaching</h2>
+      <ol class="tl">
+        <li><div class="when">Aug 2024 – Dec 2024</div><div><h3>Graduate Teaching Assistant</h3><div class="org">UNCG, Economics</div>
+          <ul><li>Led weekly recitations for undergraduate economics and statistics.</li></ul></div></li>
+        <li><div class="when">Aug 2022 – May 2023</div><div><h3>Graduate Teaching Assistant</h3><div class="org">UNCG, Economics</div>
+          <ul><li>Recitations for Principles of Macroeconomics; worked on student retention in the major.</li></ul></div></li>
+        <li><div class="when">Aug 2019 – May 2021</div><div><h3>Graduate Teaching &amp; Research Assistant</h3><div class="org">Central Michigan University</div>
+          <ul><li>Recitations for graduate Advanced Microeconomics and undergraduate Microeconomics.</li></ul></div></li>
+      </ol>
+    </div>
+    <div>
+      <h2>Education</h2>
+      <ul class="plain edu">
+        <li><span><span class="deg">PhD, Applied Economics</span><br><span class="sch">UNC Greensboro</span></span><span>2022 – 2027 (expected)</span></li>
+        <li><span><span class="deg">MA, Applied Economics</span><br><span class="sch">UNC Greensboro</span></span><span>2022</span></li>
+        <li><span><span class="deg">MA, Economics</span><br><span class="sch">Central Michigan University</span></span><span>2021</span></li>
+        <li><span><span class="deg">BA (Hons), Economics</span><br><span class="sch">University of Ghana</span></span><span>2017</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="skills">
+  <div class="wrap two">
+    <div>
+      <h2>Methods &amp; tools</h2>
+      <div class="skill"><b>Methods</b><div class="chips"><span>Causal inference</span><span>Difference-in-differences</span><span>Staggered adoption designs</span><span>Synthetic control</span><span>Quasi-experimental design</span><span>Applied econometrics</span><span>Economic impact analysis</span></div></div>
+      <div class="skill"><b>Data</b><div class="chips"><span>Medicaid claims</span><span>Administrative education data</span><span>Census</span><span>HMDA</span><span>SafeGraph</span></div></div>
+      <div class="skill"><b>Software</b><div class="chips"><span>R</span><span>Stata</span><span>SAS</span><span>IMPLAN</span><span>LaTeX</span><span>R Markdown</span><span>Git</span></div></div>
+    </div>
+    <div>
+      <h2>Honours &amp; awards</h2>
+      <ul class="plain">
+        <li><span>Wells Fargo Scholarship, UNCG</span><span>2025 – 2026</span></li>
+        <li><span>Mentee, Association for Mentoring &amp; Inclusion in Economics (AMIE)</span><span>2023 – 2025</span></li>
+        <li><span>Joseph M. Bryan Foundation Scholarship, UNCG</span><span>2023 – 2024</span></li>
+        <li><span>Green Fund Award, UNCG, for a cost-benefit analysis of electrifying campus vehicles</span><span>2023</span></li>
+        <li><span>Bryan School Achievement and Leadership Award</span><span>2022</span></li>
+        <li><span>Beta Gamma Sigma Recognition Award</span><span>2022</span></li>
+      </ul>
+      <p class="sub" style="margin-top:22px">Memberships</p>
+      <ul class="plain">
+        <li><span>American Economic Association</span><span>2023 – present</span></li>
+        <li><span>Beta Gamma Sigma</span><span>2021 – present</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>I'm glad to hear about research collaborations, policy evaluation projects and roles in health and disability policy.</p>
+    <div class="ways">
+      <a class="way" href="mailto:esbuaka@uncg.edu"><small>Email</small><span>esbuaka@uncg.edu</span></a>
+      <a class="way" href="https://github.com/EmefaSurprize"><small>GitHub</small><span>github.com/EmefaSurprize</span></a>
+      <a class="way" href="https://orcid.org/0000-0001-6078-8520"><small>ORCID</small><span>0000-0001-6078-8520</span></a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Emefa S. D. Buaka</span><span>Greensboro, North Carolina</span></div></footer>
+
+<script>
+{
+  const s = document.getElementById('did');
+  // illustrative series: periods -4..5, policy at 0
+  const T = [-4,-3,-2,-1,0,1,2,3,4,5];
+  const comp = [40,41,42.5,43,44,45,45.5,46.5,47,48];
+  const trt  = [45,46,47.5,48,49,52.2,54.3,56.2,57.6,59];
+  const draw = () => {
+    const W = s.clientWidth, H = s.clientHeight;
+    if (!W || !H) return;
+    const small = W < 420;
+    const m = {l: small ? 10 : 34, r: small ? 74 : 96, t: 26, b: 34};
+    const x = t => m.l + (t - T[0]) / (T[T.length-1] - T[0]) * (W - m.l - m.r);
+    const y = v => m.t + (1 - (v - 37) / (62 - 37)) * (H - m.t - m.b);
+    const path = a => a.map((v,i) => (i ? 'L' : 'M') + x(T[i]).toFixed(1) + ' ' + y(v).toFixed(1)).join(' ');
+    // counterfactual: treated pre-trend continued in parallel with comparison
+    const gap = trt[4] - comp[4];
+    const cf = comp.map(v => v + gap);
+    const post = T.map((t,i) => i).filter(i => T[i] >= 0);
+    const area = post.map(i => `${x(T[i])},${y(trt[i])}`).join(' ') + ' ' +
+                 post.slice().reverse().map(i => `${x(T[i])},${y(cf[i])}`).join(' ');
+    const grid = [40,48,56].map(v => `<line x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}" stroke="#ffffff1c"/>`).join('');
+    const ticks = small ? '' : T.map(t => `<text x="${x(t)}" y="${H-12}" fill="#9fc3cc" font-size="12" text-anchor="middle">${t>0?'+'+t:t}</text>`).join('');
+    const dots = (a, c) => a.map((v,i) => `<circle cx="${x(T[i])}" cy="${y(v)}" r="3.6" fill="${c}" stroke="#0d3c4c" stroke-width="1.5"/>`).join('');
+    const last = T.length - 1;
+    const mid = post[Math.floor(post.length/2)+1];
+    s.innerHTML = `
+      ${grid}
+      <polygon points="${area}" fill="#e4572e" opacity=".38"/>
+      <line x1="${x(0)}" x2="${x(0)}" y1="${m.t-8}" y2="${H-m.b}" stroke="#ffffff80" stroke-dasharray="4 5"/>
+      <text x="${x(0)+8}" y="${m.t+4}" fill="#d9ecf1" font-size="12.5">Policy adopted</text>
+      <path d="M${post.map(i=>x(T[i])+' '+y(cf[i])).join(' L')}" fill="none" stroke="#ffffff70" stroke-width="1.6" stroke-dasharray="3 4"/>
+      <path d="${path(comp)}" fill="none" stroke="#8fd0e0" stroke-width="2.6"/>
+      <path d="${path(trt)}" fill="none" stroke="#ffffff" stroke-width="2.8"/>
+      ${dots(comp,'#8fd0e0')}${dots(trt,'#ffffff')}
+      <text x="${x(T[last])+10}" y="${y(trt[last])+4}" fill="#fff" font-size="13" font-weight="600">Treated</text>
+      <text x="${x(T[last])+10}" y="${y(comp[last])+4}" fill="#8fd0e0" font-size="13">Comparison</text>
+      <text x="${x(T[last])+10}" y="${y(cf[last])+4}" fill="#ffffffa0" font-size="12">${small?'No-policy':'Counterfactual'}</text>
+      <text x="${x(T[mid])}" y="${(y(trt[mid])+y(cf[mid]))/2+5}" text-anchor="middle" fill="#ffd2c4" font-size="12.5" font-weight="600">Effect</text>
+      ${ticks}
+      ${small ? '' : `<text x="${m.l}" y="${m.t-10}" fill="#9fc3cc" font-size="12">Outcome</text>`}`;
+  };
+  const ro = new ResizeObserver(draw);
+  ro.observe(s);
+}
+</script>
+</body>
+</html>
