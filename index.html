@@ -80,6 +80,14 @@ nav .links a:hover{background:#ffffff1a;color:#fff}
 .sub{font-size:15px;font-weight:600;color:var(--soft);margin:30px 0 4px}
 .sub:first-of-type{margin-top:0}
 
+.abs{margin-top:8px}
+.abs summary{display:inline-flex;align-items:center;gap:6px;min-height:36px;cursor:pointer;color:var(--coral2);font-weight:600;font-size:14.5px;list-style:none}
+.abs summary::-webkit-details-marker{display:none}
+.abs summary::before{content:"+";display:inline-grid;place-items:center;width:18px;height:18px;border:1.5px solid currentColor;border-radius:50%;font-size:13px;line-height:1}
+.abs[open] summary::before{content:"\2212"}
+.abs p{margin:6px 0 4px;color:var(--ink);font-size:15.5px;max-width:62em}
+.note{font-size:14px;color:var(--soft);margin:8px 0 0}
+
 /* timeline */
 .tl{list-style:none;margin:0;padding:0}
 .tl li{display:grid;grid-template-columns:190px minmax(0,1fr);gap:24px;padding:20px 0;border-top:1px solid var(--line)}
@@ -125,6 +133,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     <div class="links">
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
+      <a href="#reports">Reports</a>
       <a href="#experience">Experience</a>
       <a href="#teaching">Teaching</a>
       <a href="#contact">Contact</a>
@@ -208,6 +217,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
         <a class="doi" href="https://doi.org/10.1007/s43545-023-00746-z">doi.org/10.1007/s43545-023-00746-z</a>
       </div></li>
     </ol>
+    <p class="sub">Work in progress</p>
+    <ol class="pubs">
+      <li><div class="yr">2026</div><div>
+        <div class="t">Return on investment of Tiered Care Coordination and High-Fidelity Wraparound in North Carolina Medicaid</div>
+        <div class="a">Bray, J. W., Pandit, H. &amp; <b>Buaka, E. S. D.</b></div>
+        <div class="v">In progress</div>
+      </div></li>
+    </ol>
     <p class="sub">Working papers</p>
     <ol class="pubs">
       <li><div class="yr">2023</div><div>
@@ -219,49 +236,112 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   </div>
 </section>
 
-<section class="band" id="experience">
+<section class="band" id="reports">
+  <div class="wrap">
+    <h2>Reports &amp; white papers</h2>
+    <ol class="pubs">
+      <li><div class="yr">2023</div><div>
+        <div class="t">Disparate access to credit: investigating North Carolina's residential mortgage market, 2018–2021</div>
+        <div class="a"><b>Buaka, E. S.</b> &amp; Sills, S. J.</div>
+        <div class="v">White paper, Research, Policy, and Impact Center (RPIC), National Institute of Minority Economic Development</div>
+        <details class="abs"><summary>Abstract</summary>
+          <p>Using Home Mortgage Disclosure Act (HMDA) records for North Carolina from 2018 to 2021, this white paper asks whether access to mortgage credit differs by applicant race, ethnicity and sex. We describe loan, applicant and community characteristics statewide and in seven metro areas (Raleigh, Durham, Greensboro/High Point, Winston-Salem, Charlotte, Asheville and Wilmington), then estimate logistic regression models of loan approval that hold constant loan type, purpose, occupancy, community characteristics and the loan-to-income ratio. Hispanic, Black and Asian applicants had significantly lower odds of approval than non-Hispanic White applicants: compared with White men, the odds were roughly 41–44% lower for Hispanic applicants, 35–38% lower for Black applicants and 29–32% lower for Asian applicants, while White women had slightly higher odds. Government-backed loans, refinancing, home-improvement loans and manufactured homes were also linked to lower approval, and community characteristics mattered less than expected and varied by city. Because HMDA does not record credit history or debt-to-income ratios, these are associations rather than proof of discrimination, but they point to structural barriers in the state's mortgage market that warrant further fair-lending scrutiny.</p>
+        </details>
+        <a class="doi" href="https://github.com/EmefaSurprize/hmda-lending-disparities">Analysis code on GitHub</a>
+      </div></li>
+      <li><div class="yr">2025</div><div>
+        <div class="t">Economic impact of NC OSHERC graduates: a preliminary IMPLAN analysis</div>
+        <div class="a">Nienow, S. &amp; <b>Buaka, E. S.</b></div>
+        <div class="v">Memo for RTI International and the North Carolina Occupational Safety and Health Education and Research Center, UNC Gillings School of Global Public Health</div>
+        <details class="abs"><summary>Abstract</summary>
+          <p>The North Carolina Occupational Safety and Health Education and Research Center (NC OSHERC) trains graduate-level professionals who protect worker health. This analysis characterizes the occupations and industries that employ occupational safety and health specialists and estimates the economic contribution of the center's graduates. Using IMPLAN input-output modeling (2023 data, 2025 dollars), we distributed graduates across 12 industries based on national employment patterns, assumed 70% remain working in North Carolina, and estimated direct, indirect and induced effects on jobs, labor income, value added, output and tax revenue for a single graduating cohort, for all graduates from 2018 to 2023, and for the U.S. economy as a whole. Each graduate employed in the state supports about one additional job elsewhere in the economy, and the 2018–2023 graduates together support an estimated 236 jobs and $65.7 million in economic output in North Carolina. We close with gaps in current knowledge and priorities for future research, including graduate surveys and the value of continuing education.</p>
+        </details>
+      </div></li>
+      <li><div class="yr">2026</div><div>
+        <div class="t">Alternative schools and student re-entry: evidence from the Newcomers Program and SCALE alternative schools</div>
+        <div class="a"><b>Buaka, E. S. D.</b></div>
+        <div class="v">White paper prepared for Guilford County Schools</div>
+        <details class="abs"><summary>Abstract</summary>
+          <p>Guilford County Schools runs two transitional alternative programs: the Newcomers Program, for recently arrived English Learner students, and SCALE, for students placed after serious disciplinary incidents. Using linked, de-identified student records from 2022–23 through 2024–25, this white paper offers the first longitudinal look at both programs: who they serve, how students do during placement, and what happens after they return to traditional schools. The analysis combines comparisons with English Learner peers, within-student before-during-after comparisons, and a survival analysis of time to disciplinary re-incident. Both programs show gains during enrollment. Newcomers students are more likely than comparable peers to reach the GPA needed for dual enrollment, and SCALE students' out-of-school suspensions drop sharply. For both groups, though, the first year back in a traditional school is the highest-risk period. The paper recommends structured first-year re-entry support that starts automatically when students transition.</p>
+        </details>
+      </div></li>
+    </ol>
+
+    <p class="sub" style="margin-top:36px">Course papers, Central Michigan University</p>
+    <ol class="pubs">
+      <li><div class="yr">2021</div><div>
+        <div class="t">An industrial organization analysis of Netflix in the online television market</div>
+        <div class="a"><b>Buaka, E. S. D.</b></div>
+        <div class="v">Term paper, ECO 425, Central Michigan University</div>
+        <details class="abs"><summary>Abstract</summary>
+          <p>This paper examines Netflix from an industrial organization perspective, looking at how market structure, market share, barriers to entry, product differentiation and price elasticity of demand shape its strategy in the online television market. It traces Netflix's move from mail-order DVD rentals to streaming and original programming, and argues that its ad-free, on-demand original content has kept subscriber demand relatively inelastic despite price increases. Because competitors such as Hulu and Amazon Prime now produce their own originals, continued investment in original content is central to Netflix keeping its lead.</p>
+        </details>
+      </div></li>
+      <li><div class="yr">2020</div><div>
+        <div class="t">Effect of educational attainment on income</div>
+        <div class="a"><b>Buaka, E. S. D.</b></div>
+        <div class="v">Term paper, ECO 586, Central Michigan University</div>
+        <details class="abs"><summary>Abstract</summary>
+          <p>Using cross-sectional data from the 2005 Canadian Community Health Survey, this paper estimates the relationship between educational attainment and income, with age and sex as additional explanatory variables. The regression results support the hypothesis that education is a key determinant of income. Because work experience, education quality and other relevant factors are not observed in the data, the estimates are likely affected by omitted variable bias.</p>
+        </details>
+      </div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band alt" id="experience">
   <div class="wrap">
     <h2>Experience</h2>
     <ol class="tl">
       <li><div class="when">Aug 2023 – May 2025;<br>Aug 2026 – present</div><div>
         <h3>Graduate Research Assistant, Disability &amp; Medicaid Policy</h3>
         <div class="org">University of North Carolina at Greensboro</div>
-        <ul><li>Lead causal evaluations of Medicaid-funded programs for people with IDD, including HCBS workforce and service-delivery initiatives.</li>
-        <li>Design quasi-experimental identification strategies to estimate impacts on utilization, spending and access.</li>
-        <li>Write policy-facing summaries and technical documentation on disability service financing and workforce investment.</li></ul>
+        <ul><li>Lead causal evaluations of Medicaid-funded programs for people with IDD, including HCBS workforce and service-delivery initiatives, using difference-in-differences and other quasi-experimental designs to estimate effects on utilization, spending and access.</li>
+        <li>Build IMPLAN economic impact models of North Carolina's IDD services sector and Direct Support Professional workforce, with separate statewide, urban and rural models.</li>
+        <li>Co-authored a commissioned report on the economic impact of North Carolina's IDD community for The Arc of North Carolina and the NC Council on Developmental Disabilities (Buaka &amp; Bray, 2024).</li>
+        <li>Write policy briefs and technical documentation that inform discussions on disability service financing and workforce investment.</li></ul>
       </div></li>
       <li><div class="when">May 2026 – Jul 2026</div><div>
         <h3>Digital Health Program Technology Ambassador</h3>
         <div class="org">Peacehaven Farms</div>
-        <ul><li>Co-led a feasibility study on wearable health monitoring for adults with IDD receiving Medicaid services.</li></ul>
+        <ul><li>Co-led a 30-day quality-improvement feasibility study of wearable health monitors with adults with IDD who receive Medicaid services.</li>
+        <li>Worked through the line between quality improvement and human-subjects research: drafted consent documents and an IRB risk assessment, and set protocols for anonymization and participant-ID reconciliation.</li>
+        <li>Developed the survey instruments and literature review, compiled participant data, and delivered visualizations, an interactive dashboard and a final integrated report.</li></ul>
       </div></li>
       <li><div class="when">Aug 2025 – May 2026</div><div>
         <h3>Strategic Planning Analyst Intern</h3>
         <div class="org">Guilford County Schools</div>
-        <ul><li>Analyzed student achievement, attendance and resource allocation to support district strategic planning.</li>
-        <li>Evaluated academic programs with ROI and impact analyses against the district's strategic goals.</li></ul>
+        <ul><li>Evaluated the district's two alternative-school programs, Newcomers (for recently arrived English Learners) and SCALE (disciplinary placements), by linking de-identified student records across three school years.</li>
+        <li>Used peer comparisons, within-student before/during/after designs and survival analysis of disciplinary re-incidents to track outcomes during placement and after students returned to traditional schools.</li>
+        <li>Wrote a white paper and an executive summary for district leaders, recommending structured first-year re-entry support.</li>
+        <li>Analyzed student achievement, attendance and resource allocation, including ROI and impact analyses, to support district-wide strategic planning.</li></ul>
       </div></li>
       <li><div class="when">Jan 2025 – Aug 2025</div><div>
         <h3>Graduate Research Assistant, Department of Economics</h3>
         <div class="org">University of North Carolina at Greensboro</div>
-        <ul><li>Designed and ran a cost-savings evaluation of High-Fidelity Wraparound services using Medicaid claims.</li>
-        <li>Managed data preparation, analytic workflows and model implementation.</li></ul>
+        <ul><li>Designed and ran a cost-savings evaluation of High-Fidelity Wraparound for youth in North Carolina Medicaid using 2016–2022 claims data. This work continues as a return-on-investment paper with Jeremy W. Bray and Hitanshu Pandit.</li>
+        <li>Managed data preparation, analytic workflows and model implementation in R.</li>
+        <li>Built R visualizations, including county maps of Medicaid billing adoption and an interactive timeline of the program's funding stages.</li>
+        <li>Contributed findings to discussions on equitable access to care through Tiered Care Coordination.</li></ul>
       </div></li>
       <li><div class="when">May 2023 – Aug 2023</div><div>
         <h3>Economics Research Intern</h3>
         <div class="org">RPIC, National Institute of Minority Economic Development</div>
-        <ul><li>Modeled mortgage approval probabilities from HMDA data, focusing on disparities by applicant race and gender.</li></ul>
+        <ul><li>Analyzed 2018–2021 HMDA mortgage application records for North Carolina, statewide and in seven metro areas.</li>
+        <li>Estimated logistic regression models of loan approval by applicant race, ethnicity and sex, controlling for loan, community and loan-to-income characteristics.</li>
+        <li>Co-authored the white paper <em>Disparate Access to Credit</em> with Stephen J. Sills; the analysis code is public on <a href="https://github.com/EmefaSurprize/hmda-lending-disparities">GitHub</a>.</li></ul>
       </div></li>
       <li><div class="when">Aug 2021 – May 2022</div><div>
         <h3>Graduate Research Assistant, Department of Economics</h3>
         <div class="org">University of North Carolina at Greensboro</div>
-        <ul><li>Used SafeGraph and Census population data to study how school closures affected the 2020 Census count.</li></ul>
+        <ul><li>Combined SafeGraph mobility data with Census population data to estimate how temporary COVID-19 college closures affected the 2020 Census count.</li>
+        <li>Contributed to the resulting working paper with Andersen, Hillygus, Marsicano and Martin (Annenberg Institute at Brown University, 23-765).</li></ul>
       </div></li>
     </ol>
   </div>
 </section>
 
-<section class="band alt" id="teaching">
+<section class="band" id="teaching">
   <div class="wrap two">
     <div>
       <h2>Teaching</h2>
@@ -286,7 +366,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   </div>
 </section>
 
-<section class="band" id="skills">
+<section class="band alt" id="skills">
   <div class="wrap two">
     <div>
       <h2>Methods &amp; tools</h2>
@@ -297,6 +377,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     <div>
       <h2>Honours &amp; awards</h2>
       <ul class="plain">
+        <li><span>BB&amp;T Capitalism, Markets &amp; Morality Fellowship Endowment, UNCG</span><span>Fall 2026</span></li>
         <li><span>Wells Fargo Scholarship, UNCG</span><span>2025 – 2026</span></li>
         <li><span>Mentee, Association for Mentoring &amp; Inclusion in Economics (AMIE)</span><span>2023 – 2025</span></li>
         <li><span>Joseph M. Bryan Foundation Scholarship, UNCG</span><span>2023 – 2024</span></li>
